@@ -12,7 +12,7 @@ keymap({ 'i', 'v' }, 'jk', '<esc>', { desc = "Normal Mode" })
 keymap({ 'i', 'v' }, 'kj', '<esc>', { desc = "Normal Mode" })
 
 -- Save & Quit
-keymap({ "n", "i" }, '<leader>qq', '<cmd>qa<cr>', { desc = "Quit all" })
+keymap("n", '<leader>qq', '<cmd>qa<cr>', { desc = "Quit all" })
 keymap({ 'n', 'i', 'v' }, '<C-s>', '<cmd>w<cr>', { desc = "Save file" })
 
 -- Move lines
@@ -41,7 +41,7 @@ keymap("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 keymap("n", "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", { desc = "Toggle pin" })
 keymap("n", "<leader>bpo", "<Cmd>BufferLineGroupClose ungrouped<CR>", { desc = "Delete non-pinned buffers" })
 keymap("n", "<S-x>", "<Cmd>bd<CR>", { desc = "Delete current buffer" })
-keymap("n", "<leader>bo", "<Cmd>BufferLineCloseOthers<CR>", { desc = "Delete current buffer" })
+keymap("n", "<leader>bo", "<Cmd>BufferLineCloseOthers<CR>", { desc = "Delete others buffer" })
 
 
 -- Neo-tree
@@ -65,4 +65,4 @@ keymap("n", "<leader>ms", "<Cmd>Mason<CR>", { desc = "Mason" })
 
 -- Treesitter
 -- nvim Treesitter context
-keymap("n", "<leader>tct", "<Cmd>TSContextToggle<CR>", {desc = "Treesitter context toggle"} )
+keymap("n", "<leader>tct", "<Cmd>TSContextToggle<CR>", { desc = "Treesitter context toggle" })

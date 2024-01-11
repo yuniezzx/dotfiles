@@ -2,17 +2,31 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	event = { "BufReadPre", "BufNewFile" },
+	dependencies = {
+		{ "nvim-treesitter/nvim-treesitter-textobjects" },
+		{ "windwp/nvim-ts-autotag" },
+		{
+			"JoosepAlviste/nvim-ts-context-commentstring",
+			opts = { enable_autocmd = false }
+		},
+		{ "David-Kunz/markid" }
+
+	},
 	config = function()
 		local treesitter = require("nvim-treesitter.configs")
-		
+
 		treesitter.setup({
 			-- enable syntax highlighting
-			highlight = {
-				enable = true,
-			},
+			highlight = { enable = true },
 
 			-- enable indentation
 			indent = { enable = true },
+
+			-- enable autotag
+			autotag = { enable = true },
+
+			-- enable markid
+			markid = { enable = true },
 
 			-- ensure these language parsers are installed
 			ensure_installed = {
@@ -33,6 +47,7 @@ return {
 			},
 
 			-- incremental selection
+			-- default mode "v"
 			incremental_selection = {
 				enable = true,
 				keymaps = {

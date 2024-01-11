@@ -17,5 +17,5 @@ opt.splitbelow = true -- Put new windows below current
 opt.splitright = true -- Put new windows right of current
 opt.tabstop = 4 -- Number of spaces tabs count for
 opt.termguicolors = true -- True color support
-opt.timeoutlen = 1000
+opt.timeoutlen = 800
 opt.wrap = false -- Enable line wrap

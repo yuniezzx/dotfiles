@@ -1,6 +1,12 @@
 ## 个人 dotfiles
 我的 dotfiles 设置，常用的有 nvim, tmux, alarcitty
 
+
+
+推荐字体：` Cascadia Code SemiLight `,  `JetBrainsMono Nerd Font`
+
+
+
 常用的命令:
 
 1. Mac
