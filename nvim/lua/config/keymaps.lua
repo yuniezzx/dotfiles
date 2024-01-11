@@ -12,8 +12,8 @@ keymap({ 'i', 'v' }, 'jk', '<esc>', { desc = "Normal Mode" })
 keymap({ 'i', 'v' }, 'kj', '<esc>', { desc = "Normal Mode" })
 
 -- Save & Quit
-keymap('n', '<C-q>', '<cmd>qa<cr>', { desc = "Save and Close all files" })
-keymap({ 'n', 'v' }, '<C-s>', '<cmd>w<cr>', { desc = "Save file" })
+keymap('n', '<leader>qq', '<cmd>qa<cr>', { desc = "Quit all" })
+keymap({ 'n', 'i', 'v' }, '<C-s>', '<cmd>w<cr>', { desc = "Save file" })
 
 -- Move lines
 keymap("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
@@ -62,3 +62,7 @@ keymap("n", "<leader>fp", "<Cmd>Telescope project<CR>", { desc = "Telescope proj
 
 -- Mason
 keymap("n", "<leader>ms", "<Cmd>Mason<CR>", { desc = "Mason" })
+
+-- Treesitter
+-- nvim Treesitter context
+keymap("n", "<leader>tct", "<Cmd>TSContextToggle<CR>", {desc = "Treesitter context toggle"} )
