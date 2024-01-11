@@ -12,7 +12,7 @@ keymap({ 'i', 'v' }, 'jk', '<esc>', { desc = "Normal Mode" })
 keymap({ 'i', 'v' }, 'kj', '<esc>', { desc = "Normal Mode" })
 
 -- Save & Quit
-keymap('n', '<leader>qq', '<cmd>qa<cr>', { desc = "Quit all" })
+keymap({ "n", "i" }, '<leader>qq', '<cmd>qa<cr>', { desc = "Quit all" })
 keymap({ 'n', 'i', 'v' }, '<C-s>', '<cmd>w<cr>', { desc = "Save file" })
 
 -- Move lines

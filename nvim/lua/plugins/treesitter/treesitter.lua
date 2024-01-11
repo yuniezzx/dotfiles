@@ -1,68 +1,47 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	build = { "TSInstall", "TSUpdate" },
-	cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-	event = { "LazyFile", "VeryLazy" },
-	dependencies = {
-		{
-			"nvim-treesitter/nvim-treesitter-context",
-			event = "LazyFile",
-			enabled = true,
-			opts = { mode = "cursor", max_lines = 3 },
-		},
-		{
-			"JoosepAlviste/nvim-ts-context-commentstring", -- use gcc for comments
-			lazy = true,
-			opts = {
-				enable_autocmd = false,
+	build = ":TSUpdate",
+	event = { "BufReadPre", "BufNewFile" },
+	config = function()
+		local treesitter = require("nvim-treesitter.configs")
+		
+		treesitter.setup({
+			-- enable syntax highlighting
+			highlight = {
+				enable = true,
 			},
-		},
-		{
-			"nvim-treesitter/nvim-treesitter-textobjects",
-			event = { "BufRead", "BufNewFile" },
-		},
-		{
-			"windwp/nvim-ts-autotag",
-			event = "LazyFile",
-			opts = {},
-		},
-	},
 
-	opts = {
-		ensure_installed = {
-			"astro",
-			"bash",
-			"bibtex",
-			"c",
-			"cpp",
-			"css",
-			"gitcommit",
-			"gitignore",
-			"go",
-			"html",
-			"java",
-			"javascript",
-			"json",
-			-- "latex",
-			"lua",
-			"luadoc",
-			"markdown",
-			"markdown_inline",
-			"php",
-			"python",
-			"query",
-			"regex",
-			"rust",
-			"sql",
-			"ssh_config",
-			"toml",
-			"tsx",
-			"typescript",
-			"vim",
-			"vimdoc",
-			"yaml",
-		},
-		highlight = { enable = true },
-		indent = { enable = true },
-	},
+			-- enable indentation
+			indent = { enable = true },
+
+			-- ensure these language parsers are installed
+			ensure_installed = {
+				"json",
+				"javascript",
+				"typescript",
+				"tsx",
+				"yaml",
+				"html",
+				"css",
+				"bash",
+				"lua",
+				"vim",
+				"gitignore",
+				"rust",
+				"toml",
+				"query",
+			},
+
+			-- incremental selection
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = "<C-spcae>",
+					node_incremental = "<C-space>",
+					scope_incremental = false,
+					node_decremental = "<BS>",
+				},
+			},
+		})
+	end,
 }
