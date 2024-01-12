@@ -5,10 +5,6 @@ return {
 	dependencies = {
 		{ "nvim-treesitter/nvim-treesitter-textobjects" },
 		{ "windwp/nvim-ts-autotag" },
-		{
-			"JoosepAlviste/nvim-ts-context-commentstring",
-			opts = { enable_autocmd = false }
-		},
 		{ "David-Kunz/markid" }
 
 	},

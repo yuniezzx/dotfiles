@@ -60,9 +60,15 @@ keymap("n", "<leader>fr", "<Cmd>Telescope oldfiles<CR>", { desc = "Find Recent F
 -- s	search inside files within your project
 keymap("n", "<leader>fp", "<Cmd>Telescope project<CR>", { desc = "Telescope project" })
 
+-- notify history
+keymap("n", "<leader>tn", "<Cmd>Telescope notify theme=dropdown<CR>", {desc = "Telescope notify history"} )
+
 -- Mason
 keymap("n", "<leader>ms", "<Cmd>Mason<CR>", { desc = "Mason" })
 
 -- Treesitter
 -- nvim Treesitter context
 keymap("n", "<leader>tct", "<Cmd>TSContextToggle<CR>", { desc = "Treesitter context toggle" })
+
+-- Toggle Colorizer
+keymap("n", "<leader>ct", "<CMd>ColorizerToggle<CR>", { desc = "Toggle highlighting of current buffer" })
