@@ -63,7 +63,7 @@ return {
             }
         })
 
-        -- telescope.load_extension('fzf') -- windows not working
+        telescope.load_extension('fzf') -- windows not working
         telescope.load_extension('project')
     end
 }
