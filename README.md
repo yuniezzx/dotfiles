@@ -12,7 +12,7 @@
 1. Mac
 
    ```bash
-   cp -R ~/dotfiles/nvim/lua ~/.config/nvim -- 从 dotfile 复制 Nvim 配置
+   cp -R ~/dotfiles/nvim ~/.config/ -- 从 dotfile 复制 Nvim 配置
    ```
 
    
