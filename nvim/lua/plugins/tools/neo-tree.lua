@@ -1,6 +1,7 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	event = LazyVimStarted,
+	cmd = "Neotree",
 	branch = "v3.x",
 	dependencies = {
 		"MunifTanjim/nui.nvim",

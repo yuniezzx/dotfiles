@@ -23,6 +23,12 @@ keymap("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
 keymap("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 keymap("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
+-- windows
+keymap("n", "<leader>ww", "<C-W>p", { desc = "Other window", remap = true })
+keymap("n", "<leader>wd", "<C-W>c", { desc = "Delete window", remap = true })
+keymap("n", "<leader>w-", "<C-W>s", { desc = "Split window below", remap = true })
+keymap("n", "<leader>w|", "<C-W>v", { desc = "Split window right", remap = true })
+
 --Move to the windows using <ctrl> hjkl keys
 keymap("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
 keymap("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
@@ -46,12 +52,13 @@ keymap("n", "<leader>bo", "<Cmd>BufferLineCloseOthers<CR>", { desc = "Delete oth
 
 -- Neo-tree
 keymap({ "n", "v" }, "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Explorer NeoTree (cwd)" })
-keymap({ "n", "v" }, "<leader>ge", "<cmd>Neotree source=git_status toggle<cr>", { desc = "Git explorer" })
 
 -- Telescope
---- find files
 keymap("n", "<leader>ff", "<Cmd>Telescope find_files<CR>", { desc = "Find Files" })
 keymap("n", "<leader>fr", "<Cmd>Telescope oldfiles<CR>", { desc = "Find Recent Files" })
+keymap("n", "<leader>fs", "<Cmd>Telescope live_grep<CR>", { desc = "Find string in cwd" })
+keymap("n", "<leader>fc", "<Cmd>Telescope grep_string<CR>", { desc = "Find string under cyrsir in cwd" })
+
 
 -- in normal mode:
 -- d	delete currently selected project
