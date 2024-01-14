@@ -22,3 +22,4 @@
 
 ### Neovim 
 配置了一些基本的 lsp, completion, neo-tree 等等。
+除了在 keymap 文件中设置的一些映射外，其他的映射如下：
