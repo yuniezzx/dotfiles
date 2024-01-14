@@ -13,6 +13,7 @@
 
    ```bash
    cp -R ~/dotfiles/nvim ~/.config/ -- 从 dotfile 复制 Nvim 配置
+   rm -r ~/.config/nvim  -- rm既可以删除文件又可以删除文件夹; -r 是向下递归，不管有多少级目录，一并删除
    ```
 
    
