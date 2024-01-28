@@ -13,5 +13,10 @@ return {
 			position = "left",
 			width = 30,
 		},
+		filesystem = {
+			filtered_items = {
+				visible = true,
+			}
+		}
 	}
 }
