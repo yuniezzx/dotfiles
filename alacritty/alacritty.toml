@@ -1,0 +1,25 @@
+# theme repo  https://github.com/alacritty/alacritty-theme
+
+# import theme
+import = ["~/.config/alacritty/themes/themes/catppuccin_macchiato.toml"]
+
+[window]
+dynamic_padding = true
+opacity = 0.7
+
+[window.padding]
+x = 4
+y = 0
+
+[font]
+size = 15
+
+[font.normal]
+	family = "MapleMono"
+	style = "LightItalic" 
+
+[keyboard]
+bindings = [
+	{ key = "c", mods = "COntrol", action = "Copy" },
+	{ key = "v", mods = "COntrol", action = "Paste" },
+]
