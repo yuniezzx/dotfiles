@@ -1,0 +1,14 @@
+/* 输入命令查看配置： rofi -dump-config   */
+
+configuration {
+	modes: "window,drun,run,ssh";
+	font: "maplemono 14";
+	show-icons: true;
+	display-drun: "Apps";
+	drun-display-format: "{name}";
+
+ }
+
+
+ 
+@theme "/home/maxzz/.local/share/rofi/themes/rounded-nord-dark.rasi"
