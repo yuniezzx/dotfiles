@@ -18,6 +18,10 @@ size = 15
 	family = "MapleMono"
 	style = "LightItalic" 
 
+[cursor.style]
+shape = "Block"
+blinking = "on"
+
 [keyboard]
 bindings = [
 	{ key = "c", mods = "COntrol", action = "Copy" },
