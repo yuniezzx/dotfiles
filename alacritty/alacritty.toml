@@ -1,11 +1,15 @@
 # theme repo  https://github.com/alacritty/alacritty-theme
 
 # import theme
-import = ["~/.config/alacritty/themes/themes/catppuccin_macchiato.toml"]
+import = ["./themes/catppuccin_macchiato.toml"]
 
 [window]
 dynamic_padding = true
 opacity = 0.7
+
+[window.dimensions]
+columns = 80
+lines = 30
 
 [window.padding]
 x = 4
@@ -15,8 +19,9 @@ y = 0
 size = 15
 
 [font.normal]
-	family = "MapleMono"
-	style = "LightItalic" 
+family = "Maple Mono"
+style = "LightItalic"
+
 
 [cursor.style]
 shape = "Block"
@@ -24,6 +29,8 @@ blinking = "on"
 
 [keyboard]
 bindings = [
-	{ key = "c", mods = "COntrol", action = "Copy" },
-	{ key = "v", mods = "COntrol", action = "Paste" },
+	{ key = "c", mods = "Control", action = "Copy" },
+	{ key = "v", mods = "Control", action = "Paste" },
+	{ key = "-", mods = "Control", action = "DecreaseFontSize" },
+	{ key = "=", mods = "Control", action = "IncreaseFontSize" },
 ]
