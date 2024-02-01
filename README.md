@@ -25,6 +25,8 @@
 ### Neovim 
 配置了一些基本的 lsp, completion, neo-tree 等等。
 
+常用 `:healthcheck` 用来检查
+
 除了在 keymap 文件中设置的一些映射外，其他常用的映射如下：
 
 | 按键       | 模式  | 描述                                  |
