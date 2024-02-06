@@ -5,17 +5,61 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp", -- source for lsp
 		"hrsh7th/cmp-buffer", -- source for text in buffer
-		"hrsh7th/cmp-path",  -- source for file system paths
-		"saadparwaiz1/cmp_luasnip" -- for autocompletion
+		"hrsh7th/cmp-path",   -- source for file system paths
+		"hrsh7th/cmp-cmdline", -- source for cmdline
+		"saadparwaiz1/cmp_luasnip", -- for autocompletion
+
+		"onsails/lspkind.nvim", -- add vscode-like pictograms
 	},
 	opts = function()
+		--   פּ ﯟ   some other good icons
+		local kind_icons = {
+			Text = "󰊄",
+			Method = "m",
+			Function = "󰊕",
+			Constructor = "",
+			Field = "",
+			Variable = "󰫧",
+			Class = "",
+			Interface = "",
+			Module = "",
+			Property = "",
+			Unit = "",
+			Value = "",
+			Enum = "",
+			Keyword = "󰌆",
+			Snippet = "",
+			Color = "",
+			File = "",
+			Reference = "",
+			Folder = "",
+			EnumMember = "",
+			Constant = "",
+			Struct = "",
+			Event = "",
+			Operator = "",
+			TypeParameter = "󰉺",
+		}
+
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
+		local lspkind = require("lspkind")
 
 		local check_backspace = function()
 			local col = vim.fn.col(".") - 1
 			return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 		end
+
+		-- Use cmdline source for ":"
+		cmp.setup.cmdline(':', {
+			sources = cmp.config.sources({
+				{ name = 'path' }
+			}, {
+				{
+					name = 'cmdline',
+				}
+			}),
+		})
 
 		return {
 			completion = {
@@ -75,8 +119,37 @@ return {
 				{ name = "nvim_lsp" }, -- lsp
 				{ name = "luasnip" }, -- snippets
 				{ name = "path" }, -- text within current buffer
-				{ name = 'buffer' }, -- file system paths
+				{ name = 'buffer' }, -- file system paths,
 			}),
+
+			formatting = {
+				format = function(entry, vim_item)
+					local lspkind_ok, lspkind = pcall(require, "lspkind")
+					if not lspkind_ok then
+						-- From kind_icons array
+						vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
+						-- Source
+						vim_item.menu = ({
+							buffer = "[Buffer]",
+							nvim_lsp = "[LSP]",
+							luasnip = "[LuaSnip]",
+							nvim_lua = "[Lua]",
+							latex_symbols = "[LaTeX]",
+						})[entry.source.name]
+						return vim_item
+					else
+						-- From lspkind
+						return lspkind.cmp_format()(entry, vim_item)
+					end
+				end
+			},
+
+			window = {
+				completion = cmp.config.window.bordered(
+
+				),
+				documentation = cmp.config.window.bordered(),
+			},
 		}
 	end
 
