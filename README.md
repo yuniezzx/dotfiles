@@ -74,7 +74,9 @@
 
 自定义的快捷键（可以在 alacritty.toml 中设置 ）
 
-官网配置参数 [链接](https://alacritty.org/config-alacritty.html){:target="_blank"}
+自行配置参考官网 <a href="https://alacritty.org/config-alacritty.html" target="_blank">Link</a>
+
+
 
 | 按键     | action |
 | -------- | ------ |
