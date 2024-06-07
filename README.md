@@ -58,3 +58,27 @@
 |            |      |                        |
 |            |      |                        |
 
+
+
+
+
+
+
+---
+
+
+
+
+
+### Alacritty
+
+自定义的快捷键（可以在 alacritty.toml 中设置 ）
+
+官网配置参数 [链接](https://alacritty.org/config-alacritty.html)
+
+| 按键     | action |
+| -------- | ------ |
+| Ctrl + c | Copy   |
+| Ctrl + v | Paste  |
+|          |        |
+
